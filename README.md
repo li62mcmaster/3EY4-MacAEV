@@ -1,23 +1,18 @@
-# 3EY4-MacAEV
-Autonomous Navigation and Mapping Using ROS Melodic and LiDAR
 # 3EY4 MacAEV – Autonomous Navigation and Mapping with ROS and LiDAR
 
 **3EY4 MacAEV** (McMaster Autonomous Electric Vehicle) is a robotics software stack for **autonomous navigation, obstacle avoidance, and real‑time mapping** on a small Ackermann‑steered vehicle. Built on **ROS Melodic**, it fuses 2‑D LiDAR and optional depth‑camera data to drive through unknown environments while building an occupancy grid map.
 
 ---
-
 \## Table of Contents
 
 1. [Features](#features)
 2. [Installation](#installation)
 3. [Usage](#usage)
 4. [Project Structure](#project-structure)
-5. [Contributing](#contributing)
-6. [License](#license)
 
 ---
 
-\## Features
+\# Features
 
 * **LiDAR Wall Following** – keeps the vehicle centered or at a set distance from walls/hallways.
 * **Gap + Virtual‑Barrier Navigation** – finds the largest free gap in the scan and solves a quadratic program to steer safely around obstacles.
@@ -102,20 +97,3 @@ Add **LaserScan**, **TF**, and **Map** displays to monitor scans, vehicle pose, 
 ```
 
 ---
-
-\## Contributing
-
-1. **Fork** → **branch** → **commit + test** → **pull request**.
-2. Follow PEP‑8 and ROS naming conventions.
-3. Describe your change and reference issues in the PR.
-4. Respond to review feedback – we value collaboration!
-
----
-
-\## License
-
-This project is released under the **MIT License** – see the [LICENSE](LICENSE) file for full text. Feel free to use, modify, and distribute.
-
----
-
-*Happy hacking! If you build something cool with 3EY4 MacAEV, let us know — we’d love to hear your story.*
