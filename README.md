@@ -3,16 +3,19 @@
 **3EY4 MacAEV** (McMaster Autonomous Electric Vehicle) is a robotics software stack for **autonomous navigation, obstacle avoidance, and real‑time mapping** on a small Ackermann‑steered vehicle. Built on **ROS Melodic**, it fuses 2‑D LiDAR and optional depth‑camera data to drive through unknown environments while building an occupancy grid map.
 
 ---
-\## Table of Contents
+
+## Table of Contents
 
 1. [Features](#features)
 2. [Installation](#installation)
 3. [Usage](#usage)
 4. [Project Structure](#project-structure)
+5. [Contributing](#contributing)
+6. [License](#license)
 
 ---
 
-\# Features
+## Features
 
 * **LiDAR Wall Following** – keeps the vehicle centered or at a set distance from walls/hallways.
 * **Gap + Virtual‑Barrier Navigation** – finds the largest free gap in the scan and solves a quadratic program to steer safely around obstacles.
@@ -22,9 +25,9 @@
 
 ---
 
-\## Installation
+## Installation
 
-> **Tested on Ubuntu 18.04 + ROS Melodic**. For ROS Noetic, use Python 3 packages (`pip3`).
+> **Tested on Ubuntu 18.04 + ROS Melodic**. 
 
 1. **Install ROS Melodic** (desktop‑full recommended). See the [ROS Wiki](http://wiki.ros.org/melodic/Installation/Ubuntu).
 2. **Create a catkin workspace** (if you don’t already):
@@ -57,18 +60,19 @@
 
 ---
 
-\## Usage
+## Usage
 
-\### 1 ▸ Launch sensors / simulator
+### 1. Launch sensors / simulator
+
 Ensure LiDAR publishes on `/scan` and odometry on `/odom`. For camera fusion, depth images should be on `/camera/depth/image_rect_raw`.
 
-\### 2 ▸ Load parameters
+### 2. Load parameters
 
 ```bash
 rosparam load ~/catkin_ws/src/3EY4-MacAEV/params.yaml
 ```
 
-\### 3 ▸ Run a navigation node
+### 3. Run a navigation node
 
 | Mode                      | Command                                   |
 | ------------------------- | ----------------------------------------- |
@@ -76,14 +80,15 @@ rosparam load ~/catkin_ws/src/3EY4-MacAEV/params.yaml
 | **Gap + Virtual‑Barrier** | `rosrun 3EY4-MacAEV navigation_vb.py`     |
 | **LiDAR + Camera**        | `rosrun 3EY4-MacAEV navigation_vb_cam.py` |
 
-\### 4 ▸ Visualise in RViz
+### 4. Visualise in RViz
+
 Add **LaserScan**, **TF**, and **Map** displays to monitor scans, vehicle pose, and the occupancy grid.
 
 > ⚠️ **Safety first:** Start with low speeds (`normal_speed` in `params.yaml`) and test in simulation or a safe area.
 
 ---
 
-\## Project Structure
+## Project Structure
 
 ```
 3EY4-MacAEV/
@@ -97,3 +102,7 @@ Add **LaserScan**, **TF**, and **Map** displays to monitor scans, vehicle pose, 
 ```
 
 ---
+
+## License
+
+This project is released under the **MIT License**
